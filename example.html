@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example</title>
+</head>
+<body>
+<div id='output'>Click here to append a new div inside this div.</div>
+<script src="function.js"></script>
+<script>
+document.getElementById("output").onclick = function() {
+    createDiv("myDiv", "myClass", "output");
+};
+</script>
+</body>
+</html>

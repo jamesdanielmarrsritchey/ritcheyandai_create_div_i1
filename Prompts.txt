@@ -1,0 +1,66 @@
+jamesdanielmarrsritchey: Using Javascript, write a function that creates a DIV with a specific ID, and CLASS, within an aelement of a specific ID.
+
+GitHub Copilot: Sure, here's a JavaScript function that creates a `div` with a specific `id` and `class`, and appends it to an element with a specific `id`:
+
+```javascript
+function createDiv(divId, divClass, parentId) {
+    // Create a new div
+    var newDiv = document.createElement("div");
+
+    // Set the div's id and class
+    newDiv.id = divId;
+    newDiv.className = divClass;
+
+    // Find the parent element
+    var parentElement = document.getElementById(parentId);
+
+    // Append the new div to the parent element
+    if (parentElement) {
+        parentElement.appendChild(newDiv);
+    } else {
+        console.log(`Parent element with id ${parentId} not found.`);
+    }
+}
+```
+
+You can call this function with the `id` and `class` you want for the new `div`, and the `id` of the parent element. For example:
+
+```javascript
+createDiv("myDiv", "myClass", "myParent");
+```
+
+This will create a new `div` with `id` "myDiv" and `class` "myClass", and append it to the element with `id` "myParent".
+
+jamesdanielmarrsritchey: Provide an example of running this functino automatically, and an example of running it onClick.
+
+GitHub Copilot: Sure, here are the examples:
+
+1. Running the function automatically when the page loads:
+
+You can use the `window.onload` event to run the function automatically when the page loads.
+
+```javascript
+window.onload = function() {
+    createDiv("myDiv", "myClass", "myParent");
+};
+```
+
+2. Running the function on a click event:
+
+You can attach an `onclick` event to a button (or any other clickable element) to run the function when the button is clicked.
+
+First, add a button to your HTML:
+
+```html
+<button id="myButton">Create Div</button>
+```
+
+Then, in your JavaScript, attach the `onclick` event to the button:
+
+```javascript
+document.getElementById("myButton").onclick = function() {
+    createDiv("myDiv", "myClass", "myParent");
+};
+```
+
+In this example, when the button with `id` "myButton" is clicked, it will run the `createDiv` function.
